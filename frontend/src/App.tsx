@@ -1,16 +1,40 @@
 import { useState } from "react";
+import { sendChat } from "./api/client";
 import "./App.css";
 
 function App() {
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+) => {
+
     event.preventDefault();
 
-    console.log("Message:", message);
+    if (!message.trim()) {
+        return;
+    }
 
-    setMessage("");
-  };
+    try {
+
+        const response =
+            await sendChat({
+                message,
+            });
+
+        alert(response.answer);
+
+        setMessage("");
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Unable to contact backend.");
+
+    }
+
+};
 
   return (
     <main className="app">
