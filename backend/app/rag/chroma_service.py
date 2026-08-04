@@ -29,6 +29,46 @@ class ChromaService:
                 "description": "Workout plans used by FitAI."
             },
         )
+        
+    def query(
+        self,
+        query_embedding: list[float],
+        limit: int = 3,
+    ) -> dict:
+        """Return the closest documents to a query embedding."""
+
+        if not query_embedding:
+            raise ValueError(
+                "Query embedding cannot be empty."
+            )
+
+        if limit < 1:
+            raise ValueError(
+                "Result limit must be at least 1."
+            )
+
+        available_documents = self.count()
+
+        if available_documents == 0:
+            raise ValueError(
+                "The ChromaDB collection is empty. "
+                "Run the ingestion pipeline first."
+            )
+
+        result_limit = min(
+            limit,
+            available_documents,
+        )
+
+        return self._collection.query(
+            query_embeddings=[query_embedding],
+            n_results=result_limit,
+            include=[
+                "documents",
+                "metadatas",
+                "distances",
+            ],
+        )
 
     @property
     def collection(self) -> Collection:
