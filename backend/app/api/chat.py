@@ -1,7 +1,8 @@
 from fastapi import APIRouter
-
+from app.services.rag_service import RagService
 from app.models.chat import ChatRequest, ChatResponse
 
+rag_service = RagService()
 router = APIRouter(
     prefix="/api",
     tags=["chat"],
@@ -16,6 +17,10 @@ async def chat(
     request: ChatRequest,
 ) -> ChatResponse:
 
+    response = rag_service.chat(
+        request.message,
+    )
+
     return ChatResponse(
-        answer=f"You said: {request.message}"
+        answer=response,
     )
