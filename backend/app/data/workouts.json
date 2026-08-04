@@ -1,0 +1,1181 @@
+[
+  {
+    "id": "beginner-full-body-foundation",
+    "name": "Beginner Full Body Foundation",
+    "summary": "A simple full-body routine for people who are new to structured exercise. It develops basic strength, movement confidence, and general fitness using accessible compound movements.",
+    "goal": "General Fitness",
+    "difficulty": "Beginner",
+    "equipment": ["Dumbbells", "Exercise Mat"],
+    "duration_minutes": 35,
+    "training_style": "Full Body Strength",
+    "themes": ["beginner", "full body", "general fitness", "strength fundamentals"],
+    "weekly_schedule": [
+      {
+        "day": "Monday",
+        "focus": "Full Body A",
+        "exercises": [
+          {
+            "name": "Goblet Squat",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 60,
+            "notes": "Keep the weight close to your chest and control the descent."
+          },
+          {
+            "name": "Dumbbell Floor Press",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 60,
+            "notes": "Keep your elbows at a comfortable angle from your torso."
+          },
+          {
+            "name": "One-Arm Dumbbell Row",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 60,
+            "notes": "Keep your back neutral and pull toward your hip."
+          },
+          {
+            "name": "Glute Bridge",
+            "sets": 3,
+            "repetitions": "12",
+            "rest_seconds": 45,
+            "notes": "Pause briefly at the top."
+          }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "focus": "Full Body B",
+        "exercises": [
+          {
+            "name": "Dumbbell Romanian Deadlift",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 60,
+            "notes": "Push your hips backward while maintaining a neutral spine."
+          },
+          {
+            "name": "Incline Push-Up",
+            "sets": 3,
+            "repetitions": "8-12",
+            "rest_seconds": 60,
+            "notes": "Use a stable elevated surface."
+          },
+          {
+            "name": "Reverse Lunge",
+            "sets": 3,
+            "repetitions": "8 each side",
+            "rest_seconds": 60,
+            "notes": "Take a controlled step backward."
+          },
+          {
+            "name": "Dead Bug",
+            "sets": 3,
+            "repetitions": "8 each side",
+            "rest_seconds": 45,
+            "notes": "Keep your lower back gently pressed toward the floor."
+          }
+        ]
+      },
+      {
+        "day": "Friday",
+        "focus": "Repeat Full Body A",
+        "exercises": [
+          {
+            "name": "Goblet Squat",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 60,
+            "notes": "Use a manageable weight and consistent depth."
+          },
+          {
+            "name": "Dumbbell Floor Press",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 60,
+            "notes": "Move through a controlled range of motion."
+          },
+          {
+            "name": "One-Arm Dumbbell Row",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 60,
+            "notes": "Avoid rotating your torso."
+          },
+          {
+            "name": "Glute Bridge",
+            "sets": 3,
+            "repetitions": "12",
+            "rest_seconds": 45,
+            "notes": "Finish each repetition with full hip extension."
+          }
+        ]
+      }
+    ],
+    "recommendations": [
+      "Train on non-consecutive days.",
+      "Begin with light weights and prioritize correct technique.",
+      "Increase the weight only after all repetitions feel controlled."
+    ]
+  },
+  {
+    "id": "beginner-fat-loss-circuit",
+    "name": "Beginner Fat Loss Circuit",
+    "summary": "A time-efficient circuit combining simple resistance exercises with low-impact cardio. It is intended for beginners who want to improve conditioning and support fat-loss goals.",
+    "goal": "Fat Loss",
+    "difficulty": "Beginner",
+    "equipment": ["Exercise Mat", "Light Dumbbells"],
+    "duration_minutes": 30,
+    "training_style": "Circuit Training",
+    "themes": ["fat loss", "conditioning", "beginner", "short workout"],
+    "weekly_schedule": [
+      {
+        "day": "Monday",
+        "focus": "Low-Impact Conditioning Circuit",
+        "exercises": [
+          {
+            "name": "Bodyweight Squat",
+            "sets": 3,
+            "repetitions": "12",
+            "rest_seconds": 30,
+            "notes": "Move at a steady and controlled pace."
+          },
+          {
+            "name": "Incline Push-Up",
+            "sets": 3,
+            "repetitions": "8-10",
+            "rest_seconds": 30,
+            "notes": "Choose an elevation that allows controlled repetitions."
+          },
+          {
+            "name": "Alternating Reverse Lunge",
+            "sets": 3,
+            "repetitions": "8 each side",
+            "rest_seconds": 30,
+            "notes": "Reduce the range of motion when necessary."
+          },
+          {
+            "name": "March in Place",
+            "sets": 3,
+            "repetitions": "45 seconds",
+            "rest_seconds": 45,
+            "notes": "Keep moving continuously at a sustainable pace."
+          }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "focus": "Dumbbell Conditioning Circuit",
+        "exercises": [
+          {
+            "name": "Dumbbell Romanian Deadlift",
+            "sets": 3,
+            "repetitions": "12",
+            "rest_seconds": 30,
+            "notes": "Use light weights and maintain a neutral back."
+          },
+          {
+            "name": "Standing Dumbbell Press",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 30,
+            "notes": "Avoid arching your lower back."
+          },
+          {
+            "name": "Step-Back Squat",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 30,
+            "notes": "Move carefully and keep your balance."
+          },
+          {
+            "name": "Fast March",
+            "sets": 3,
+            "repetitions": "45 seconds",
+            "rest_seconds": 45,
+            "notes": "Use a pace that raises your breathing without losing control."
+          }
+        ]
+      },
+      {
+        "day": "Saturday",
+        "focus": "Mixed Full Body Circuit",
+        "exercises": [
+          {
+            "name": "Goblet Squat",
+            "sets": 3,
+            "repetitions": "12",
+            "rest_seconds": 30,
+            "notes": "Keep your chest upright."
+          },
+          {
+            "name": "Dumbbell Row",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 30,
+            "notes": "Pull the dumbbell toward your hip."
+          },
+          {
+            "name": "Glute Bridge",
+            "sets": 3,
+            "repetitions": "15",
+            "rest_seconds": 30,
+            "notes": "Squeeze your glutes at the top."
+          },
+          {
+            "name": "Low-Impact Step Jack",
+            "sets": 3,
+            "repetitions": "45 seconds",
+            "rest_seconds": 45,
+            "notes": "Step one foot outward at a time instead of jumping."
+          }
+        ]
+      }
+    ],
+    "recommendations": [
+      "Combine training with sustainable nutrition habits.",
+      "Keep the pace challenging but controlled.",
+      "Take additional rest when exercise technique begins to deteriorate."
+    ]
+  },
+  {
+    "id": "dumbbell-only-muscle-builder",
+    "name": "Dumbbell Only Muscle Builder",
+    "summary": "A four-day muscle-building program using only dumbbells. It provides balanced upper- and lower-body training for people exercising at home or with limited equipment.",
+    "goal": "Muscle Building",
+    "difficulty": "Intermediate",
+    "equipment": ["Dumbbells", "Bench"],
+    "duration_minutes": 50,
+    "training_style": "Upper Lower Split",
+    "themes": ["hypertrophy", "muscle building", "dumbbells", "home training"],
+    "weekly_schedule": [
+      {
+        "day": "Monday",
+        "focus": "Upper Body",
+        "exercises": [
+          {
+            "name": "Dumbbell Bench Press",
+            "sets": 4,
+            "repetitions": "8-12",
+            "rest_seconds": 90,
+            "notes": "Keep your shoulder blades stable against the bench."
+          },
+          {
+            "name": "One-Arm Dumbbell Row",
+            "sets": 4,
+            "repetitions": "8-12 each side",
+            "rest_seconds": 90,
+            "notes": "Pull through the elbow without twisting."
+          },
+          {
+            "name": "Seated Dumbbell Shoulder Press",
+            "sets": 3,
+            "repetitions": "10-12",
+            "rest_seconds": 75,
+            "notes": "Keep your torso stable."
+          },
+          {
+            "name": "Dumbbell Curl",
+            "sets": 3,
+            "repetitions": "10-15",
+            "rest_seconds": 60,
+            "notes": "Avoid swinging the weights."
+          }
+        ]
+      },
+      {
+        "day": "Tuesday",
+        "focus": "Lower Body",
+        "exercises": [
+          {
+            "name": "Goblet Squat",
+            "sets": 4,
+            "repetitions": "10-15",
+            "rest_seconds": 90,
+            "notes": "Use a controlled tempo."
+          },
+          {
+            "name": "Dumbbell Romanian Deadlift",
+            "sets": 4,
+            "repetitions": "8-12",
+            "rest_seconds": 90,
+            "notes": "Feel tension through the hamstrings."
+          },
+          {
+            "name": "Dumbbell Reverse Lunge",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 75,
+            "notes": "Keep your front foot firmly planted."
+          },
+          {
+            "name": "Standing Calf Raise",
+            "sets": 3,
+            "repetitions": "15-20",
+            "rest_seconds": 60,
+            "notes": "Pause at the top and lower fully."
+          }
+        ]
+      },
+      {
+        "day": "Thursday",
+        "focus": "Upper Body Variation",
+        "exercises": [
+          {
+            "name": "Incline Dumbbell Press",
+            "sets": 4,
+            "repetitions": "8-12",
+            "rest_seconds": 90,
+            "notes": "Use a moderate bench incline."
+          },
+          {
+            "name": "Chest-Supported Dumbbell Row",
+            "sets": 4,
+            "repetitions": "10-12",
+            "rest_seconds": 90,
+            "notes": "Keep your chest supported throughout."
+          },
+          {
+            "name": "Dumbbell Lateral Raise",
+            "sets": 3,
+            "repetitions": "12-15",
+            "rest_seconds": 60,
+            "notes": "Use light weights and avoid shrugging."
+          },
+          {
+            "name": "Dumbbell Triceps Extension",
+            "sets": 3,
+            "repetitions": "10-15",
+            "rest_seconds": 60,
+            "notes": "Keep your upper arms steady."
+          }
+        ]
+      },
+      {
+        "day": "Friday",
+        "focus": "Lower Body Variation",
+        "exercises": [
+          {
+            "name": "Dumbbell Front Squat",
+            "sets": 4,
+            "repetitions": "8-12",
+            "rest_seconds": 90,
+            "notes": "Keep the dumbbells stable at shoulder height."
+          },
+          {
+            "name": "Dumbbell Hip Thrust",
+            "sets": 4,
+            "repetitions": "10-15",
+            "rest_seconds": 90,
+            "notes": "Pause at full hip extension."
+          },
+          {
+            "name": "Bulgarian Split Squat",
+            "sets": 3,
+            "repetitions": "8-10 each side",
+            "rest_seconds": 75,
+            "notes": "Begin without weight if balance is difficult."
+          },
+          {
+            "name": "Seated Calf Raise with Dumbbells",
+            "sets": 3,
+            "repetitions": "15-20",
+            "rest_seconds": 60,
+            "notes": "Use a full range of motion."
+          }
+        ]
+      }
+    ],
+    "recommendations": [
+      "Finish most sets with one to three repetitions still possible.",
+      "Increase repetitions before increasing dumbbell weight.",
+      "Allow at least one full rest day each week."
+    ]
+  },
+  {
+    "id": "home-bodyweight-strength",
+    "name": "Home Bodyweight Strength",
+    "summary": "A no-equipment home program designed to build foundational strength and muscular endurance. It uses progressions that can be adjusted for different ability levels.",
+    "goal": "Strength",
+    "difficulty": "Beginner",
+    "equipment": ["No Equipment"],
+    "duration_minutes": 35,
+    "training_style": "Bodyweight Strength",
+    "themes": ["home workout", "bodyweight", "no equipment", "strength"],
+    "weekly_schedule": [
+      {
+        "day": "Monday",
+        "focus": "Push and Legs",
+        "exercises": [
+          {
+            "name": "Bodyweight Squat",
+            "sets": 4,
+            "repetitions": "12-15",
+            "rest_seconds": 60,
+            "notes": "Control each repetition."
+          },
+          {
+            "name": "Push-Up",
+            "sets": 4,
+            "repetitions": "6-12",
+            "rest_seconds": 75,
+            "notes": "Use an incline or knee variation when needed."
+          },
+          {
+            "name": "Reverse Lunge",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 60,
+            "notes": "Maintain balance and control."
+          },
+          {
+            "name": "Front Plank",
+            "sets": 3,
+            "repetitions": "30 seconds",
+            "rest_seconds": 45,
+            "notes": "Keep a straight line from shoulders to heels."
+          }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "focus": "Posterior Chain and Core",
+        "exercises": [
+          {
+            "name": "Single-Leg Glute Bridge",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 60,
+            "notes": "Keep your hips level."
+          },
+          {
+            "name": "Prone Y Raise",
+            "sets": 3,
+            "repetitions": "12",
+            "rest_seconds": 45,
+            "notes": "Lift gently without straining your neck."
+          },
+          {
+            "name": "Split Squat",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 60,
+            "notes": "Use a stable stance."
+          },
+          {
+            "name": "Bird Dog",
+            "sets": 3,
+            "repetitions": "8 each side",
+            "rest_seconds": 45,
+            "notes": "Avoid rotating your hips."
+          }
+        ]
+      },
+      {
+        "day": "Friday",
+        "focus": "Full Body",
+        "exercises": [
+          {
+            "name": "Tempo Squat",
+            "sets": 4,
+            "repetitions": "10",
+            "rest_seconds": 60,
+            "notes": "Lower for three seconds."
+          },
+          {
+            "name": "Push-Up",
+            "sets": 4,
+            "repetitions": "6-12",
+            "rest_seconds": 75,
+            "notes": "Stop before your form breaks down."
+          },
+          {
+            "name": "Alternating Lunge",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 60,
+            "notes": "Keep your torso upright."
+          },
+          {
+            "name": "Side Plank",
+            "sets": 3,
+            "repetitions": "20 seconds each side",
+            "rest_seconds": 45,
+            "notes": "Use a bent-knee version when necessary."
+          }
+        ]
+      }
+    ],
+    "recommendations": [
+      "Use easier exercise variations until technique is consistent.",
+      "Progress by adding repetitions or slowing the movement.",
+      "Train on non-consecutive days."
+    ]
+  },
+  {
+    "id": "barbell-strength-foundation",
+    "name": "Barbell Strength Foundation",
+    "summary": "A gym-based strength program centered on squat, bench press, deadlift, and overhead press. It is intended for trainees who already understand basic barbell technique.",
+    "goal": "Strength",
+    "difficulty": "Intermediate",
+    "equipment": ["Barbell", "Weight Plates", "Squat Rack", "Bench"],
+    "duration_minutes": 60,
+    "training_style": "Linear Strength Training",
+    "themes": ["barbell", "strength", "compound lifts", "gym"],
+    "weekly_schedule": [
+      {
+        "day": "Monday",
+        "focus": "Squat and Bench",
+        "exercises": [
+          {
+            "name": "Back Squat",
+            "sets": 5,
+            "repetitions": "5",
+            "rest_seconds": 180,
+            "notes": "Use a weight that allows consistent technique."
+          },
+          {
+            "name": "Bench Press",
+            "sets": 5,
+            "repetitions": "5",
+            "rest_seconds": 180,
+            "notes": "Keep your feet planted and upper back stable."
+          },
+          {
+            "name": "Barbell Row",
+            "sets": 3,
+            "repetitions": "8",
+            "rest_seconds": 120,
+            "notes": "Maintain a stable torso."
+          }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "focus": "Deadlift and Overhead Press",
+        "exercises": [
+          {
+            "name": "Deadlift",
+            "sets": 3,
+            "repetitions": "5",
+            "rest_seconds": 180,
+            "notes": "Reset your position before each repetition."
+          },
+          {
+            "name": "Overhead Press",
+            "sets": 5,
+            "repetitions": "5",
+            "rest_seconds": 150,
+            "notes": "Brace your torso and avoid excessive leaning."
+          },
+          {
+            "name": "Front Squat",
+            "sets": 3,
+            "repetitions": "6",
+            "rest_seconds": 150,
+            "notes": "Use a lighter load than your back squat."
+          }
+        ]
+      },
+      {
+        "day": "Friday",
+        "focus": "Squat and Bench Variation",
+        "exercises": [
+          {
+            "name": "Back Squat",
+            "sets": 5,
+            "repetitions": "5",
+            "rest_seconds": 180,
+            "notes": "Add weight only after completing every set cleanly."
+          },
+          {
+            "name": "Paused Bench Press",
+            "sets": 4,
+            "repetitions": "5",
+            "rest_seconds": 150,
+            "notes": "Pause briefly with control at the bottom."
+          },
+          {
+            "name": "Romanian Deadlift",
+            "sets": 3,
+            "repetitions": "8",
+            "rest_seconds": 120,
+            "notes": "Maintain tension through the hamstrings."
+          }
+        ]
+      }
+    ],
+    "recommendations": [
+      "Use conservative starting weights.",
+      "Increase loads gradually when all sets are completed with good technique.",
+      "Seek qualified coaching when learning unfamiliar barbell movements."
+    ]
+  },
+  {
+    "id": "push-pull-legs-hypertrophy",
+    "name": "Push Pull Legs Hypertrophy",
+    "summary": "A six-session gym program that separates pushing, pulling, and lower-body movements. It provides higher weekly volume for experienced trainees focused on muscle growth.",
+    "goal": "Muscle Building",
+    "difficulty": "Advanced",
+    "equipment": ["Barbell", "Dumbbells", "Cable Machine", "Gym Machines"],
+    "duration_minutes": 70,
+    "training_style": "Push Pull Legs",
+    "themes": ["hypertrophy", "gym", "high volume", "push pull legs"],
+    "weekly_schedule": [
+      {
+        "day": "Monday and Thursday",
+        "focus": "Push",
+        "exercises": [
+          {
+            "name": "Bench Press",
+            "sets": 4,
+            "repetitions": "6-10",
+            "rest_seconds": 120,
+            "notes": "Use a controlled descent."
+          },
+          {
+            "name": "Incline Dumbbell Press",
+            "sets": 3,
+            "repetitions": "8-12",
+            "rest_seconds": 90,
+            "notes": "Keep the bench at a moderate incline."
+          },
+          {
+            "name": "Cable Lateral Raise",
+            "sets": 3,
+            "repetitions": "12-15",
+            "rest_seconds": 60,
+            "notes": "Keep tension throughout the movement."
+          },
+          {
+            "name": "Cable Triceps Pressdown",
+            "sets": 3,
+            "repetitions": "10-15",
+            "rest_seconds": 60,
+            "notes": "Keep your upper arms stationary."
+          }
+        ]
+      },
+      {
+        "day": "Tuesday and Friday",
+        "focus": "Pull",
+        "exercises": [
+          {
+            "name": "Pull-Up or Lat Pulldown",
+            "sets": 4,
+            "repetitions": "6-10",
+            "rest_seconds": 120,
+            "notes": "Use a full controlled range."
+          },
+          {
+            "name": "Barbell Row",
+            "sets": 4,
+            "repetitions": "8-10",
+            "rest_seconds": 120,
+            "notes": "Avoid using momentum."
+          },
+          {
+            "name": "Cable Face Pull",
+            "sets": 3,
+            "repetitions": "12-15",
+            "rest_seconds": 60,
+            "notes": "Pull toward your upper face with elbows high."
+          },
+          {
+            "name": "Dumbbell Curl",
+            "sets": 3,
+            "repetitions": "10-15",
+            "rest_seconds": 60,
+            "notes": "Control both lifting and lowering."
+          }
+        ]
+      },
+      {
+        "day": "Wednesday and Saturday",
+        "focus": "Legs",
+        "exercises": [
+          {
+            "name": "Back Squat",
+            "sets": 4,
+            "repetitions": "6-10",
+            "rest_seconds": 150,
+            "notes": "Maintain consistent depth."
+          },
+          {
+            "name": "Romanian Deadlift",
+            "sets": 4,
+            "repetitions": "8-12",
+            "rest_seconds": 120,
+            "notes": "Keep the bar close to your legs."
+          },
+          {
+            "name": "Leg Press",
+            "sets": 3,
+            "repetitions": "10-15",
+            "rest_seconds": 90,
+            "notes": "Do not allow your lower back to lift from the pad."
+          },
+          {
+            "name": "Standing Calf Raise",
+            "sets": 4,
+            "repetitions": "12-20",
+            "rest_seconds": 60,
+            "notes": "Use a complete range of motion."
+          }
+        ]
+      }
+    ],
+    "recommendations": [
+      "Use this program only when you can recover from six weekly sessions.",
+      "Reduce volume when fatigue consistently affects performance.",
+      "Include at least one complete rest day."
+    ]
+  },
+  {
+    "id": "low-impact-beginner-movement",
+    "name": "Low Impact Beginner Movement",
+    "summary": "A gentle movement program with no jumping and manageable exercise variations. It supports beginners who want to improve mobility, balance, and general activity levels.",
+    "goal": "General Fitness",
+    "difficulty": "Beginner",
+    "equipment": ["Chair", "Exercise Mat"],
+    "duration_minutes": 25,
+    "training_style": "Low Impact Training",
+    "themes": ["low impact", "beginner", "mobility", "no jumping"],
+    "weekly_schedule": [
+      {
+        "day": "Monday",
+        "focus": "Lower Body and Balance",
+        "exercises": [
+          {
+            "name": "Chair Squat",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 60,
+            "notes": "Touch the chair lightly before standing."
+          },
+          {
+            "name": "Supported Reverse Step",
+            "sets": 3,
+            "repetitions": "8 each side",
+            "rest_seconds": 45,
+            "notes": "Hold the chair when balance support is needed."
+          },
+          {
+            "name": "Standing Calf Raise",
+            "sets": 3,
+            "repetitions": "12",
+            "rest_seconds": 45,
+            "notes": "Use the chair for support."
+          },
+          {
+            "name": "Single-Leg Balance",
+            "sets": 3,
+            "repetitions": "20 seconds each side",
+            "rest_seconds": 30,
+            "notes": "Keep one hand close to the chair."
+          }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "focus": "Upper Body and Posture",
+        "exercises": [
+          {
+            "name": "Wall Push-Up",
+            "sets": 3,
+            "repetitions": "10-12",
+            "rest_seconds": 45,
+            "notes": "Keep your body aligned."
+          },
+          {
+            "name": "Seated Arm Raise",
+            "sets": 3,
+            "repetitions": "12",
+            "rest_seconds": 30,
+            "notes": "Move slowly without shrugging."
+          },
+          {
+            "name": "Wall Slide",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 45,
+            "notes": "Use a comfortable range of motion."
+          },
+          {
+            "name": "Seated Knee Lift",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 30,
+            "notes": "Sit upright and move with control."
+          }
+        ]
+      },
+      {
+        "day": "Friday",
+        "focus": "Gentle Full Body",
+        "exercises": [
+          {
+            "name": "Chair Squat",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 60,
+            "notes": "Use your legs rather than pushing from the chair."
+          },
+          {
+            "name": "Wall Push-Up",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 45,
+            "notes": "Move closer to the wall to make it easier."
+          },
+          {
+            "name": "Standing Knee Raise",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 45,
+            "notes": "Use support when necessary."
+          },
+          {
+            "name": "Easy March in Place",
+            "sets": 3,
+            "repetitions": "45 seconds",
+            "rest_seconds": 45,
+            "notes": "Maintain a comfortable pace."
+          }
+        ]
+      }
+    ],
+    "recommendations": [
+      "Exercise near a stable support when balance is uncertain.",
+      "Use a comfortable range of motion.",
+      "Stop any movement that causes sharp or unusual pain."
+    ]
+  },
+  {
+    "id": "mobility-and-recovery-flow",
+    "name": "Mobility and Recovery Flow",
+    "summary": "A short recovery routine focused on controlled mobility for the hips, shoulders, spine, and ankles. It is suitable for rest days or after long periods of sitting.",
+    "goal": "Mobility",
+    "difficulty": "Beginner",
+    "equipment": ["Exercise Mat"],
+    "duration_minutes": 20,
+    "training_style": "Mobility Flow",
+    "themes": ["mobility", "recovery", "flexibility", "rest day"],
+    "weekly_schedule": [
+      {
+        "day": "Tuesday",
+        "focus": "Full Body Mobility",
+        "exercises": [
+          {
+            "name": "Cat-Cow",
+            "sets": 2,
+            "repetitions": "8",
+            "rest_seconds": 20,
+            "notes": "Move gently through a comfortable spinal range."
+          },
+          {
+            "name": "Half-Kneeling Hip Flexor Stretch",
+            "sets": 2,
+            "repetitions": "30 seconds each side",
+            "rest_seconds": 20,
+            "notes": "Keep your ribs stacked above your hips."
+          },
+          {
+            "name": "Open Book Rotation",
+            "sets": 2,
+            "repetitions": "8 each side",
+            "rest_seconds": 20,
+            "notes": "Follow your hand with your eyes."
+          },
+          {
+            "name": "Ankle Rock",
+            "sets": 2,
+            "repetitions": "10 each side",
+            "rest_seconds": 20,
+            "notes": "Keep your heel on the floor."
+          }
+        ]
+      },
+      {
+        "day": "Thursday",
+        "focus": "Shoulders and Hips",
+        "exercises": [
+          {
+            "name": "Child's Pose with Side Reach",
+            "sets": 2,
+            "repetitions": "30 seconds each side",
+            "rest_seconds": 20,
+            "notes": "Breathe slowly into the stretched side."
+          },
+          {
+            "name": "90-90 Hip Rotation",
+            "sets": 2,
+            "repetitions": "8",
+            "rest_seconds": 20,
+            "notes": "Use your hands for support if needed."
+          },
+          {
+            "name": "Wall Shoulder Slide",
+            "sets": 2,
+            "repetitions": "10",
+            "rest_seconds": 20,
+            "notes": "Avoid forcing your arms against the wall."
+          },
+          {
+            "name": "Deep Squat Hold with Support",
+            "sets": 2,
+            "repetitions": "30 seconds",
+            "rest_seconds": 30,
+            "notes": "Hold a stable surface and use a comfortable depth."
+          }
+        ]
+      },
+      {
+        "day": "Sunday",
+        "focus": "Recovery Flow",
+        "exercises": [
+          {
+            "name": "Supine Breathing",
+            "sets": 2,
+            "repetitions": "60 seconds",
+            "rest_seconds": 15,
+            "notes": "Use slow, relaxed breaths."
+          },
+          {
+            "name": "Knee-to-Chest Stretch",
+            "sets": 2,
+            "repetitions": "30 seconds each side",
+            "rest_seconds": 20,
+            "notes": "Keep the opposite leg relaxed."
+          },
+          {
+            "name": "Thread the Needle",
+            "sets": 2,
+            "repetitions": "8 each side",
+            "rest_seconds": 20,
+            "notes": "Rotate gently through the upper back."
+          },
+          {
+            "name": "Supported Forward Fold",
+            "sets": 2,
+            "repetitions": "30 seconds",
+            "rest_seconds": 20,
+            "notes": "Keep your knees slightly bent."
+          }
+        ]
+      }
+    ],
+    "recommendations": [
+      "Do not force a stretch beyond a comfortable range.",
+      "Use slow breathing throughout the routine.",
+      "Mobility sessions should leave you feeling better, not exhausted."
+    ]
+  },
+  {
+    "id": "quick-upper-body-workout",
+    "name": "Quick Upper Body Workout",
+    "summary": "A concise dumbbell upper-body workout for busy users. It trains the chest, back, shoulders, and arms in approximately 30 minutes.",
+    "goal": "Upper Body Strength",
+    "difficulty": "Intermediate",
+    "equipment": ["Dumbbells", "Bench"],
+    "duration_minutes": 30,
+    "training_style": "Upper Body Supersets",
+    "themes": ["upper body", "short workout", "dumbbells", "strength"],
+    "weekly_schedule": [
+      {
+        "day": "Monday",
+        "focus": "Upper Body A",
+        "exercises": [
+          {
+            "name": "Dumbbell Bench Press",
+            "sets": 4,
+            "repetitions": "8-12",
+            "rest_seconds": 75,
+            "notes": "Pair with the one-arm row."
+          },
+          {
+            "name": "One-Arm Dumbbell Row",
+            "sets": 4,
+            "repetitions": "8-12 each side",
+            "rest_seconds": 75,
+            "notes": "Pair with the bench press."
+          },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 60,
+            "notes": "Keep your torso stable."
+          },
+          {
+            "name": "Dumbbell Curl to Press",
+            "sets": 3,
+            "repetitions": "10",
+            "rest_seconds": 60,
+            "notes": "Use a weight you can control through both movements."
+          }
+        ]
+      },
+      {
+        "day": "Thursday",
+        "focus": "Upper Body B",
+        "exercises": [
+          {
+            "name": "Incline Dumbbell Press",
+            "sets": 4,
+            "repetitions": "8-12",
+            "rest_seconds": 75,
+            "notes": "Use a moderate bench incline."
+          },
+          {
+            "name": "Chest-Supported Dumbbell Row",
+            "sets": 4,
+            "repetitions": "10-12",
+            "rest_seconds": 75,
+            "notes": "Keep your chest against the bench."
+          },
+          {
+            "name": "Dumbbell Lateral Raise",
+            "sets": 3,
+            "repetitions": "12-15",
+            "rest_seconds": 60,
+            "notes": "Use light weights."
+          },
+          {
+            "name": "Dumbbell Triceps Extension",
+            "sets": 3,
+            "repetitions": "10-15",
+            "rest_seconds": 60,
+            "notes": "Keep your elbows controlled."
+          }
+        ]
+      }
+    ],
+    "recommendations": [
+      "Prepare equipment before beginning to reduce wasted time.",
+      "Use paired exercises to keep the session efficient.",
+      "Do not shorten rest periods when it causes technique to deteriorate."
+    ]
+  },
+  {
+    "id": "athletic-conditioning",
+    "name": "Athletic Conditioning",
+    "summary": "A challenging program combining strength, explosive movements, and conditioning intervals. It is intended for experienced users who want better work capacity and athletic performance.",
+    "goal": "Athletic Performance",
+    "difficulty": "Advanced",
+    "equipment": ["Dumbbells", "Kettlebell", "Exercise Mat"],
+    "duration_minutes": 45,
+    "training_style": "Strength and Conditioning",
+    "themes": ["athletic performance", "conditioning", "power", "advanced"],
+    "weekly_schedule": [
+      {
+        "day": "Monday",
+        "focus": "Lower Body Power",
+        "exercises": [
+          {
+            "name": "Kettlebell Swing",
+            "sets": 5,
+            "repetitions": "12",
+            "rest_seconds": 75,
+            "notes": "Use an explosive hip drive rather than lifting with the arms."
+          },
+          {
+            "name": "Dumbbell Front Squat",
+            "sets": 4,
+            "repetitions": "8",
+            "rest_seconds": 90,
+            "notes": "Maintain a stable torso."
+          },
+          {
+            "name": "Reverse Lunge to Knee Drive",
+            "sets": 3,
+            "repetitions": "8 each side",
+            "rest_seconds": 60,
+            "notes": "Control the transition and maintain balance."
+          },
+          {
+            "name": "Mountain Climber",
+            "sets": 4,
+            "repetitions": "30 seconds",
+            "rest_seconds": 45,
+            "notes": "Keep your hips stable."
+          }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "focus": "Upper Body and Conditioning",
+        "exercises": [
+          {
+            "name": "Dumbbell Push Press",
+            "sets": 4,
+            "repetitions": "8",
+            "rest_seconds": 90,
+            "notes": "Use a controlled leg drive."
+          },
+          {
+            "name": "Renegade Row",
+            "sets": 4,
+            "repetitions": "8 each side",
+            "rest_seconds": 90,
+            "notes": "Use a wider foot position for stability."
+          },
+          {
+            "name": "Push-Up",
+            "sets": 3,
+            "repetitions": "12",
+            "rest_seconds": 60,
+            "notes": "Maintain a rigid body position."
+          },
+          {
+            "name": "Fast High-Knee March or Run",
+            "sets": 5,
+            "repetitions": "30 seconds",
+            "rest_seconds": 30,
+            "notes": "Choose the impact level appropriate for you."
+          }
+        ]
+      },
+      {
+        "day": "Saturday",
+        "focus": "Full Body Conditioning",
+        "exercises": [
+          {
+            "name": "Dumbbell Thruster",
+            "sets": 4,
+            "repetitions": "10",
+            "rest_seconds": 75,
+            "notes": "Coordinate the squat and press smoothly."
+          },
+          {
+            "name": "Kettlebell Romanian Deadlift",
+            "sets": 4,
+            "repetitions": "12",
+            "rest_seconds": 75,
+            "notes": "Use a controlled hip hinge."
+          },
+          {
+            "name": "Alternating Reverse Lunge",
+            "sets": 3,
+            "repetitions": "10 each side",
+            "rest_seconds": 60,
+            "notes": "Keep the movement consistent as fatigue increases."
+          },
+          {
+            "name": "Plank Shoulder Tap",
+            "sets": 4,
+            "repetitions": "20 total",
+            "rest_seconds": 45,
+            "notes": "Minimize hip rotation."
+          }
+        ]
+      }
+    ],
+    "recommendations": [
+      "Complete a thorough warm-up before explosive exercises.",
+      "Choose lower-impact alternatives when necessary.",
+      "Do not perform this program while severely fatigued."
+    ]
+  }
+]
