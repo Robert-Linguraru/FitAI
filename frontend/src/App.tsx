@@ -8,6 +8,7 @@ import {
 import { sendChat } from "./api/client";
 import ChatInput from "./components/ChatInput";
 import ChatWindow from "./components/ChatWindow";
+import SuggestedPrompts from "./components/SuggestedPrompts";
 import "./App.css";
 import type { ChatMessage, ChatRole } from "./types/chatMessage";
 
@@ -35,6 +36,11 @@ function App() {
   const bottomAnchorRef = useRef<HTMLDivElement>(null);
 
   const hasConversationStarted = messages.length > 0;
+
+  const handleSelectPrompt = (prompt: string) => {
+    setMessage(prompt);
+    inputRef.current?.focus();
+  };
 
   useEffect(() => {
     bottomAnchorRef.current?.scrollIntoView({
@@ -139,19 +145,33 @@ function App() {
           aria-hidden={hasConversationStarted}
         >
           <div className="welcome-content">
-            <p className="eyebrow">
-              Personalized training
-            </p>
+            <div className="welcome-layout">
+              <div className="welcome-copy">
+                <p className="eyebrow">
+                  Personalized training
+                </p>
 
-            <h2>
-              Build a workout around your life.
-            </h2>
+                <h2>
+                  Build a workout around your life.
+                </h2>
 
-            <p>
-              Describe your fitness goals in natural
-              language and receive personalized workout
-              recommendations powered by FitAI.
-            </p>
+                <p>
+                  Describe your fitness goals in natural
+                  language and receive personalized workout
+                  recommendations powered by FitAI.
+                </p>
+              </div>
+
+              <div className="welcome-prompts">
+                <p className="prompts-heading">
+                  Quick Actions
+                </p>
+
+                <SuggestedPrompts
+                  onSelectPrompt={handleSelectPrompt}
+                />
+              </div>
+            </div>
           </div>
         </div>
 
