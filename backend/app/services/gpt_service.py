@@ -33,7 +33,7 @@ class GPTGenerationService:
     def __init__(self) -> None:
         self._client = OpenAI()
         self._workout_tool = WorkoutTool()
-        
+
     def generate(
         self,
         prompt: RagPrompt,
@@ -63,12 +63,59 @@ class GPTGenerationService:
             if item.type != "function_call":
                 continue
 
+            if item.name != "get_workout_by_name":
+                logger.warning(
+                    "Unknown tool requested: %s",
+                    item.name,
+                )
+
+                tool_output = {
+                    "error": f"Unknown tool '{item.name}'."
+                }
+
+                response = self._client.responses.create(
+                    model="gpt-5",
+                    previous_response_id=response.id,
+                    input=[
+                        {
+                            "type": "function_call_output",
+                            "call_id": item.call_id,
+                            "output": json.dumps(tool_output),
+                        }
+                    ],
+                )
+
+                break            
+
             logger.info(
                 "Executing tool: %s",
                 item.name,
             )
 
-            arguments = json.loads(item.arguments)
+            try:
+                arguments = json.loads(item.arguments)
+            except json.JSONDecodeError:
+                logger.exception(
+                    "Invalid tool arguments."
+                )
+
+                tool_output = {
+                    "error": "Invalid tool arguments."
+                }
+
+                response = self._client.responses.create(
+                    model="gpt-5",
+                    previous_response_id=response.id,
+                    input=[
+                        {
+                            "type": "function_call_output",
+                            "call_id": item.call_id,
+                            "output": json.dumps(tool_output),
+                        }
+                    ],
+                )
+
+                break
 
             workout = self._workout_tool.get_workout_by_name(
                 arguments["workout_name"],
@@ -76,10 +123,18 @@ class GPTGenerationService:
 
             if workout is None:
                 tool_output = {
-                    "error": "Workout not found."
+                    "error": (
+                        "The requested workout could not be found "
+                        "in the FitAI knowledge base."
+                    )
                 }
             else:
                 tool_output = workout.model_dump()
+
+                logger.info(
+                    "Tool '%s' executed successfully.",
+                    item.name,
+                )            
 
             logger.info(
                 "Submitting tool output back to OpenAI."
