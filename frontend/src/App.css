@@ -246,6 +246,104 @@
   max-width: min(76%, 680px);
 }
 
+.workout-card {
+  margin-bottom: 0.75rem;
+  padding: 1rem;
+
+  border: 1px solid rgba(255, 87, 87, 0.28);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(145deg, rgba(123, 21, 34, 0.62), rgba(25, 29, 36, 0.96));
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.018) inset;
+}
+
+.workout-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.workout-card-eyebrow,
+.workout-detail-label {
+  color: var(--accent-soft);
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.workout-card h3 {
+  margin-top: 0.25rem;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.workout-difficulty {
+  flex: 0 0 auto;
+  padding: 0.35rem 0.55rem;
+
+  border: 1px solid rgba(255, 164, 104, 0.28);
+  border-radius: 999px;
+
+  background: rgba(255, 164, 104, 0.1);
+  color: #ffc18e;
+  font-size: 0.68rem;
+  font-weight: 750;
+}
+
+.workout-details {
+  margin-top: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.workout-detail {
+  padding: 0.65rem 0.7rem;
+
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.workout-detail strong {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--text-primary);
+  font-size: 0.84rem;
+}
+
+.workout-equipment {
+  margin-top: 0.9rem;
+}
+
+.workout-equipment ul {
+  margin: 0.45rem 0 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  list-style: none;
+}
+
+.workout-equipment li {
+  padding: 0.35rem 0.55rem;
+
+  border: 1px solid var(--border-subtle);
+  border-radius: 7px;
+  background: rgba(8, 10, 13, 0.3);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+}
+
 .message-author {
   margin: 0 0 0.4rem 0.25rem;
 
@@ -438,6 +536,15 @@
 
   .message-content {
     max-width: 84%;
+  }
+
+  .workout-card-header {
+    display: block;
+  }
+
+  .workout-difficulty {
+    display: inline-block;
+    margin-top: 0.65rem;
   }
 
   .message-text {

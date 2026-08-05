@@ -1,4 +1,6 @@
 import type { ChatMessage as ChatMessageData } from "../types/chatMessage";
+import { workouts } from "../data/workouts";
+import WorkoutCard from "./WorkoutCard";
 
 interface ChatMessageProps {
   message: ChatMessageData;
@@ -6,6 +8,13 @@ interface ChatMessageProps {
 
 function ChatMessage({ message }: ChatMessageProps) {
   const isAssistant = message.role === "assistant";
+  const recommendedWorkout = isAssistant
+    ? workouts.find((workout) =>
+        message.content
+          .toLocaleLowerCase()
+          .includes(workout.name.toLocaleLowerCase()),
+      )
+    : undefined;
 
   return (
     <article
@@ -19,6 +28,10 @@ function ChatMessage({ message }: ChatMessageProps) {
         <p className="message-author">
           {isAssistant ? "FitAI" : "You"}
         </p>
+
+        {recommendedWorkout && (
+          <WorkoutCard workout={recommendedWorkout} />
+        )}
 
         <p className="message-text">{message.content}</p>
       </div>
