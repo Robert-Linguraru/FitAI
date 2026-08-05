@@ -22,5 +22,6 @@ async def chat(
     )
 
     return ChatResponse(
-        answer=response,
+        answer=response.answer,
+        sources=response.sources,
     )

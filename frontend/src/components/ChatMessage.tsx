@@ -8,13 +8,24 @@ interface ChatMessageProps {
 
 function ChatMessage({ message }: ChatMessageProps) {
   const isAssistant = message.role === "assistant";
-  const recommendedWorkout = isAssistant
-    ? workouts.find((workout) =>
-        message.content
-          .toLocaleLowerCase()
-          .includes(workout.name.toLocaleLowerCase()),
-      )
-    : undefined;
+  const recommendedWorkouts = isAssistant
+    ? (message.sources ?? [])
+        .flatMap((source) => {
+          const workout = workouts.find(
+            (candidate) =>
+              candidate.name.toLocaleLowerCase() ===
+              source.toLocaleLowerCase(),
+          );
+
+          return workout ? [workout] : [];
+        })
+        .filter(
+          (workout, index, matches) =>
+            matches.findIndex(
+              (match) => match.id === workout.id,
+            ) === index,
+        )
+    : [];
 
   return (
     <article
@@ -29,9 +40,9 @@ function ChatMessage({ message }: ChatMessageProps) {
           {isAssistant ? "FitAI" : "You"}
         </p>
 
-        {recommendedWorkout && (
-          <WorkoutCard workout={recommendedWorkout} />
-        )}
+        {recommendedWorkouts.map((workout) => (
+          <WorkoutCard key={workout.id} workout={workout} />
+        ))}
 
         <p className="message-text">{message.content}</p>
       </div>

@@ -1,5 +1,6 @@
 import logging
 import json
+from dataclasses import dataclass
 
 from openai import OpenAI
 
@@ -11,10 +12,13 @@ logger = logging.getLogger(__name__)
 WORKOUT_TOOL = {
     "type": "function",
     "name": "get_workout_by_name",
-    "description":          
-        "Retrieve the complete workout plan, including the weekly "
-        "schedule, exercises, sets, repetitions, rest times, and "
-        "recommendations, using the exact workout name.",
+    "description": (
+        "Retrieve the complete workout plan using the exact workout name. "
+        "You MUST call this tool before recommending, comparing, or "
+        "describing any named FitAI workout. The returned workout is the "
+        "source of truth. Never invent or recommend a named workout "
+        "without retrieving it first."
+    ),
     "parameters": {
         "type": "object",
         "properties": {
@@ -27,6 +31,14 @@ WORKOUT_TOOL = {
     },
 }
 
+
+@dataclass(frozen=True)
+class GPTGenerationResult:
+    """Generated answer and workouts resolved through tool calls."""
+
+    answer: str
+    sources: list[str]
+
 class GPTGenerationService:
     """Generates grounded responses using the OpenAI Responses API."""
 
@@ -37,7 +49,7 @@ class GPTGenerationService:
     def generate(
         self,
         prompt: RagPrompt,
-    ) -> str:
+    ) -> GPTGenerationResult:
         """
         Generate a response from a prepared RAG prompt.
         """
@@ -57,6 +69,9 @@ class GPTGenerationService:
             "Received response from OpenAI."
         )
 
+        tool_sources: list[str] = []
+        tool_outputs: list[dict[str, object]] = []
+
         # Check if GPT requested a tool
         for item in response.output:
 
@@ -73,19 +88,14 @@ class GPTGenerationService:
                     "error": f"Unknown tool '{item.name}'."
                 }
 
-                response = self._client.responses.create(
-                    model="gpt-5",
-                    previous_response_id=response.id,
-                    input=[
-                        {
-                            "type": "function_call_output",
-                            "call_id": item.call_id,
-                            "output": json.dumps(tool_output),
-                        }
-                    ],
+                tool_outputs.append(
+                    {
+                        "type": "function_call_output",
+                        "call_id": item.call_id,
+                        "output": json.dumps(tool_output),
+                    }
                 )
-
-                break            
+                continue
 
             logger.info(
                 "Executing tool: %s",
@@ -103,19 +113,14 @@ class GPTGenerationService:
                     "error": "Invalid tool arguments."
                 }
 
-                response = self._client.responses.create(
-                    model="gpt-5",
-                    previous_response_id=response.id,
-                    input=[
-                        {
-                            "type": "function_call_output",
-                            "call_id": item.call_id,
-                            "output": json.dumps(tool_output),
-                        }
-                    ],
+                tool_outputs.append(
+                    {
+                        "type": "function_call_output",
+                        "call_id": item.call_id,
+                        "output": json.dumps(tool_output),
+                    }
                 )
-
-                break
+                continue
 
             workout = self._workout_tool.get_workout_by_name(
                 arguments["workout_name"],
@@ -131,6 +136,9 @@ class GPTGenerationService:
             else:
                 tool_output = workout.model_dump()
 
+                if workout.name not in tool_sources:
+                    tool_sources.append(workout.name)
+
                 logger.info(
                     "Tool '%s' executed successfully.",
                     item.name,
@@ -140,22 +148,26 @@ class GPTGenerationService:
                 "Submitting tool output back to OpenAI."
             )
 
+            tool_outputs.append(
+                {
+                    "type": "function_call_output",
+                    "call_id": item.call_id,
+                    "output": json.dumps(tool_output),
+                }
+            )
+
+        if tool_outputs:
             response = self._client.responses.create(
                 model="gpt-5",
                 previous_response_id=response.id,
-                input=[
-                    {
-                        "type": "function_call_output",
-                        "call_id": item.call_id,
-                        "output": json.dumps(tool_output),
-                    }
-                ],
+                input=tool_outputs,
             )
-
-            break
 
         logger.info(
             "Returning final AI response."
         )
 
-        return response.output_text.strip()
+        return GPTGenerationResult(
+            answer=response.output_text.strip(),
+            sources=tool_sources,
+        )

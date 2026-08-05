@@ -87,7 +87,10 @@ function App() {
 
       setMessages((currentMessages) => [
         ...currentMessages,
-        createMessage("assistant", response.answer),
+        {
+          ...createMessage("assistant", response.answer),
+          sources: response.sources,
+        },
       ]);
     } catch (error) {
       console.error(
