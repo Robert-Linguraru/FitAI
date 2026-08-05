@@ -1,29 +1,87 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #f7f8fa;
+  background: #080a0d;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  color-scheme: dark;
+
+  --text-primary: #f7f8fa;
+  --text-secondary: #adb4c0;
+  --text-muted: #757d89;
+  --accent-soft: #ff7474;
+  --border-default:
+    rgba(255, 255, 255, 0.12);
+  --border-subtle:
+    rgba(255, 255, 255, 0.075);
 }
 
-html,
-body,
-#root {
-    width: 100%;
-    min-height: 100vh;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: #080a0d;
 }
 
 body {
-    font-family:
-        Inter,
-        "Segoe UI",
-        sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
 
-    background:
-        radial-gradient(circle at top,
-            #1a1a1a 0%,
-            #111111 45%,
-            #090909 100%);
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(179, 31, 48, 0.22),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 100% 20%,
+      rgba(102, 19, 31, 0.12),
+      transparent 28%
+    ),
+    #080a0d;
 
-    color: white;
+  color: var(--text-primary);
+}
 
-    overflow-x: hidden;
+body,
+button,
+input {
+  font: inherit;
+}
+
+button,
+input {
+  appearance: none;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+button {
+  border: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(239, 66, 82, 0.35);
+  color: #ffffff;
 }
