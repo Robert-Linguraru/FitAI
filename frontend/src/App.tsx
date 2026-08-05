@@ -1,14 +1,15 @@
-import { useState, type FormEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+} from "react";
 import { sendChat } from "./api/client";
+import ChatInput from "./components/ChatInput";
+import ChatWindow from "./components/ChatWindow";
 import "./App.css";
-
-type ChatRole = "user" | "assistant";
-
-interface ChatMessage {
-  id: string;
-  role: ChatRole;
-  content: string;
-}
+import type { ChatMessage, ChatRole } from "./types/chatMessage";
 
 function createMessage(
   role: ChatRole,
@@ -28,19 +29,43 @@ function App() {
   const [messages, setMessages] = useState<ChatMessage[]>(
     [],
   );
+  const [isLoading, setIsLoading] = useState(false);
+  const isLoadingRef = useRef(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const bottomAnchorRef = useRef<HTMLDivElement>(null);
 
   const hasConversationStarted = messages.length > 0;
+
+  useEffect(() => {
+    bottomAnchorRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
+  }, [messages, isLoading]);
+
+  useEffect(() => {
+    if (!isLoading && hasConversationStarted) {
+      inputRef.current?.focus();
+    }
+  }, [hasConversationStarted, isLoading]);
 
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
 
+    if (isLoadingRef.current) {
+      return;
+    }
+
     const trimmedMessage = message.trim();
 
     if (!trimmedMessage) {
       return;
     }
+
+    isLoadingRef.current = true;
+    setIsLoading(true);
 
     setMessages((currentMessages) => [
       ...currentMessages,
@@ -68,9 +93,12 @@ function App() {
         ...currentMessages,
         createMessage(
           "assistant",
-          "I couldn’t reach the FitAI service. Check that the backend is running, then try again.",
+          "I couldn't reach the FitAI service.\nPlease make sure the backend is running, then try again.",
         ),
       ]);
+    } finally {
+      isLoadingRef.current = false;
+      setIsLoading(false);
     }
   };
 
@@ -131,79 +159,29 @@ function App() {
           className="conversation-region"
           aria-hidden={!hasConversationStarted}
         >
-          <div
-            className="chat-history"
-            role="log"
-            aria-live="polite"
-            aria-relevant="additions"
-          >
-            {messages.map((chatMessage) => {
-              const isAssistant =
-                chatMessage.role === "assistant";
-
-              return (
-                <article
-                  className={
-                    `chat-message chat-message--${chatMessage.role}`
-                  }
-                  key={chatMessage.id}
-                >
-                  <div
-                    className="message-avatar"
-                    aria-hidden="true"
-                  >
-                    {isAssistant ? "AI" : "You"}
-                  </div>
-
-                  <div className="message-content">
-                    <p className="message-author">
-                      {isAssistant ? "FitAI" : "You"}
-                    </p>
-
-                    <p className="message-text">
-                      {chatMessage.content}
-                    </p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+          <ChatWindow
+            messages={messages}
+            isLoading={isLoading}
+            bottomAnchorRef={bottomAnchorRef}
+          />
         </div>
 
-        <form
-          className="chat-form"
-          onSubmit={handleSubmit}
-        >
-          <label
-            className="sr-only"
-            htmlFor="chat-message"
-          >
-            Message FitAI
-          </label>
-
-          <div className="chat-control">
-            <input
-              id="chat-message"
-              name="message"
-              type="text"
-              placeholder={
-                hasConversationStarted
-                  ? "Ask FitAI a follow-up question..."
-                  : "Tell FitAI about your goals..."
-              }
-              value={message}
-              onChange={(event) =>
-                setMessage(event.target.value)
-              }
-              autoComplete="off"
-            />
-
-            <button type="submit">
-              Send
-              <span aria-hidden="true">→</span>
-            </button>
-          </div>
-        </form>
+        <ChatInput
+          value={message}
+          isLoading={isLoading}
+          inputRef={inputRef}
+          placeholder={
+            hasConversationStarted
+              ? "Ask FitAI a follow-up question..."
+              : "Tell FitAI about your goals..."
+          }
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            setMessage(event.target.value)
+          }
+          onSubmit={(event: FormEvent<HTMLFormElement>) =>
+            void handleSubmit(event)
+          }
+        />
       </section>
     </main>
   );
