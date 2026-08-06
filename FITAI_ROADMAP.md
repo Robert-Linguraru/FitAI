@@ -20,7 +20,7 @@ Remaining work focuses on improving AI quality, removing temporary architecture,
 - [ ] Ticket 10 – Replace Emojis with Icons
 - [X] Ticket 11 – Message Animations
 - [X] Ticket 12 – Skeleton Loading
-- [ ] Ticket 13 – Visual Polish
+- [X] Ticket 13 – Visual Polish
 - [ ] Ticket 14 – Markdown Rendering
 - [ ] Ticket 15 – Workout Card Improvements
 - [ ] Ticket 16 – Documentation
@@ -270,7 +270,7 @@ Transforms FitAI from a chatbot into a coaching assistant.
 - [X] Ticket 10 – Replace Emojis with Icons
 - [X] Ticket 11 – Message Animations
 - [X] Ticket 12 – Skeleton Loading
-- [ ] Ticket 13 – Visual Polish
+- [X] Ticket 13 – Visual Polish
 - [ ] Ticket 14 – Markdown Rendering
 - [ ] Ticket 15 – Workout Card Improvements
 

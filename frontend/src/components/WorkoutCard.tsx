@@ -5,9 +5,11 @@ interface WorkoutCardProps {
 }
 
 function WorkoutCard({ workout }: WorkoutCardProps) {
+  const difficultyClassName = `workout-card--${workout.difficulty.toLowerCase()}`;
+
   return (
     <section
-      className="workout-card workout-card--enter"
+      className={`workout-card workout-card--enter ${difficultyClassName}`}
       aria-label={workout.name}
     >
       <div className="workout-card-header">

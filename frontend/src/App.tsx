@@ -5,6 +5,7 @@ import {
   type ChangeEvent,
   type FormEvent,
 } from "react";
+import { Dumbbell } from "lucide-react";
 import { sendChat } from "./api/client";
 import ChatInput from "./components/ChatInput";
 import ChatWindow from "./components/ChatWindow";
@@ -123,7 +124,7 @@ function App() {
         <header className="fitai-header">
           <div className="brand">
             <div className="logo" aria-hidden="true">
-              🏋️
+              <Dumbbell size={21} strokeWidth={2.2} />
             </div>
 
             <div className="brand-copy">
@@ -138,8 +139,7 @@ function App() {
               aria-hidden="true"
             />
 
-            <span>Backend</span>
-            <span className="ready">Ready</span>
+            <span className="ready">Agent Ready</span>
           </div>
         </header>
 
