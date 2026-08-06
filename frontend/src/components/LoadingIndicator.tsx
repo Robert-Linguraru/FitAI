@@ -10,8 +10,14 @@ function LoadingIndicator() {
       </div>
 
       <div className="message-content">
-        <p className="message-author">FitAI</p>
-        <p className="message-text">Thinking...</p>
+        <div className="message-skeleton" aria-hidden="true">
+          <span className="skeleton-line skeleton-line--title" />
+          <span className="skeleton-line skeleton-line--body" />
+          <span className="skeleton-line skeleton-line--body" />
+          <span className="skeleton-line skeleton-line--body-short" />
+        </div>
+
+        <span className="sr-only">FitAI is thinking</span>
       </div>
     </div>
   );

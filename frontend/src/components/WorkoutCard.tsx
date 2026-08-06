@@ -6,7 +6,10 @@ interface WorkoutCardProps {
 
 function WorkoutCard({ workout }: WorkoutCardProps) {
   return (
-    <section className="workout-card" aria-label={workout.name}>
+    <section
+      className="workout-card workout-card--enter"
+      aria-label={workout.name}
+    >
       <div className="workout-card-header">
         <div>
           <p className="workout-card-eyebrow">Recommended workout</p>

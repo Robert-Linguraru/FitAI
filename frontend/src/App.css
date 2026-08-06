@@ -57,7 +57,7 @@
   border-radius: 13px;
   background: linear-gradient(145deg, #f54848, #a90f1e);
   box-shadow: 0 10px 28px rgba(201, 25, 43, 0.22);
-  font-size: 1.05rem;
+  color: #fff;
 }
 
 .brand-copy h1 {
@@ -200,7 +200,11 @@
 
 .suggested-prompt-icon {
   flex: 0 0 auto;
-  font-size: 1rem;
+  width: 19px;
+  height: 19px;
+  display: grid;
+  place-items: center;
+  color: var(--accent-soft);
   line-height: 1.2;
 }
 
@@ -345,6 +349,58 @@
   max-width: min(76%, 680px);
 }
 
+.message-skeleton {
+  min-height: 104px;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px 18px 18px 18px;
+  background: #191d24;
+}
+
+.skeleton-line {
+  display: block;
+  height: 0.7rem;
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.08) 8%,
+      rgba(255, 255, 255, 0.2) 18%,
+      rgba(255, 255, 255, 0.08) 33%
+    );
+  background-size: 220% 100%;
+  animation: skeleton-shimmer 1.4s linear infinite;
+}
+
+.skeleton-line + .skeleton-line {
+  margin-top: 0.6rem;
+}
+
+.skeleton-line--title {
+  width: 5.25rem;
+  height: 0.62rem;
+  margin-bottom: 0.72rem;
+}
+
+.skeleton-line--body {
+  width: 100%;
+}
+
+.skeleton-line--body-short {
+  width: 72%;
+}
+
+.chat-message--assistant {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.chat-message--assistant.chat-message--enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
 .workout-card {
   margin-bottom: 0.75rem;
   padding: 1rem;
@@ -357,6 +413,10 @@
   box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.18),
     0 0 0 1px rgba(255, 255, 255, 0.018) inset;
+}
+
+.workout-card--enter {
+  animation: workout-card-in 220ms ease-out 90ms both;
 }
 
 .workout-card-header {
@@ -583,6 +643,28 @@
   transform: translateY(0);
 }
 
+@keyframes skeleton-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: -120% 0;
+  }
+}
+
+@keyframes workout-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .sr-only {
   position: absolute;
 
@@ -657,6 +739,10 @@
     max-width: 84%;
   }
 
+  .message-skeleton {
+    min-height: 94px;
+  }
+
   .workout-card-header {
     display: block;
   }
@@ -701,5 +787,14 @@
   .welcome-content,
   .chat-history {
     transition: none;
+  }
+
+  .chat-message--assistant,
+  .workout-card--enter,
+  .skeleton-line {
+    transition: none;
+    animation: none;
+    transform: none;
+    opacity: 1;
   }
 }
