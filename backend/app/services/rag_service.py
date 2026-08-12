@@ -1,6 +1,7 @@
 from app.rag.prompt_builder import RagPromptBuilder
 from app.rag.retriever import WorkoutRetriever
 from app.services.gpt_service import GPTGenerationService
+from app.services.timing import ChatTiming
 from dataclasses import dataclass
 import logging
 
@@ -26,6 +27,7 @@ class RagService:
     def chat(
         self,
         user_message: str,
+        timing: ChatTiming | None = None,
     ) -> ChatResult:
         """
         Generate a grounded AI response using semantic retrieval.
@@ -35,6 +37,7 @@ class RagService:
         retrieved_workouts = self._retriever.retrieve(
             query=user_message,
             limit=3,
+            timing=timing,
         )
         if not retrieved_workouts:
             logger.warning(
@@ -51,13 +54,28 @@ class RagService:
                 sources=[],
             )        
 
-        prompt = self._prompt_builder.build(
-            user_message=user_message,
-            retrieved_workouts=retrieved_workouts,
-        )
+        if timing is None:
+            prompt = self._prompt_builder.build(
+                user_message=user_message,
+                retrieved_workouts=retrieved_workouts,
+            )
+        else:
+            with timing.measure("prompt_building"):
+                prompt = self._prompt_builder.build(
+                    user_message=user_message,
+                    retrieved_workouts=retrieved_workouts,
+                    timing=timing,
+                )
 
         try:
-            generation = self._gpt_service.generate(prompt)
+            if timing is None:
+                generation = self._gpt_service.generate(prompt)
+            else:
+                with timing.measure("generation"):
+                    generation = self._gpt_service.generate(
+                        prompt,
+                        timing=timing,
+                    )
 
             return ChatResult(
                 answer=generation.answer,
@@ -76,3 +94,8 @@ class RagService:
                 ),
                 sources=[],
             )
+
+    def warm_up(self) -> None:
+        """Warm RAG dependencies before serving requests."""
+
+        self._retriever.warm_up()

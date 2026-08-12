@@ -1,6 +1,7 @@
 from app.models.retrieval import RetrievalResult
 from app.rag.chroma_service import ChromaService
 from app.services.embedding_service import EmbeddingService
+from app.services.timing import ChatTiming
 
 
 class WorkoutRetriever:
@@ -21,10 +22,16 @@ class WorkoutRetriever:
             or ChromaService()
         )
 
+    def warm_up(self) -> None:
+        """Warm retrieval dependencies."""
+
+        self._chroma_service.warm_up()
+
     def retrieve(
         self,
         query: str,
         limit: int = 3,
+        timing: ChatTiming | None = None,
     ) -> list[RetrievalResult]:
         """Return the most semantically relevant workout plans."""
 
@@ -35,16 +42,27 @@ class WorkoutRetriever:
                 "Retrieval query cannot be empty."
             )
 
-        query_embedding = (
-            self._embedding_service.create_embedding(
+        if timing is None:
+            query_embedding = self._embedding_service.create_embedding(
                 cleaned_query
             )
-        )
+        else:
+            with timing.measure("embeddings"):
+                query_embedding = self._embedding_service.create_embedding(
+                    cleaned_query
+                )
 
-        raw_results = self._chroma_service.query(
-            query_embedding=query_embedding,
-            limit=limit,
-        )
+        if timing is None:
+            raw_results = self._chroma_service.query(
+                query_embedding=query_embedding,
+                limit=limit,
+            )
+        else:
+            with timing.measure("retrieval"):
+                raw_results = self._chroma_service.query(
+                    query_embedding=query_embedding,
+                    limit=limit,
+                )
 
         ids = raw_results.get("ids", [[]])[0]
         documents = raw_results.get("documents", [[]])[0]
@@ -52,6 +70,9 @@ class WorkoutRetriever:
         distances = raw_results.get("distances", [[]])[0]
 
         results: list[RetrievalResult] = []
+
+        if timing is not None:
+            timing.retrieved_document_count = len(documents)
 
         for workout_id, document, metadata, distance in zip(
             ids,

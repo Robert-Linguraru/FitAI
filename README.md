@@ -67,7 +67,7 @@ http://localhost:5173
 
 ## Project Status
 
-🚧 Work in progress
+Finished 
 
 This project is being developed as part of an AI engineering assignment to demonstrate:
 

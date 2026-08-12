@@ -1,11 +1,13 @@
 import logging
 import json
+from time import perf_counter
 from dataclasses import dataclass
 
 from openai import OpenAI
 
 from app.tools.workout_tool import WorkoutTool
 from app.rag.prompt_builder import RagPrompt
+from app.services.timing import ChatTiming
 
 logger = logging.getLogger(__name__)
 
@@ -49,6 +51,7 @@ class GPTGenerationService:
     def generate(
         self,
         prompt: RagPrompt,
+        timing: ChatTiming | None = None,
     ) -> GPTGenerationResult:
         """
         Generate a response from a prepared RAG prompt.
@@ -58,12 +61,26 @@ class GPTGenerationService:
             "Sending request to OpenAI Responses API."
         )
 
+        started_at = perf_counter()
+        # response = self._client.responses.create(
+        #     model="gpt-5",
+        #     instructions=prompt.instructions,
+        #     input=prompt.model_input,
+        #     tools=[WORKOUT_TOOL],
+        # )
         response = self._client.responses.create(
             model="gpt-5",
             instructions=prompt.instructions,
             input=prompt.model_input,
             tools=[WORKOUT_TOOL],
+            reasoning={
+                "effort": "low",
+            },
         )
+        if timing is not None:
+            timing.record_openai_call(
+                (perf_counter() - started_at) * 1000
+            )
 
         logger.info(
             "Received response from OpenAI."
@@ -77,6 +94,8 @@ class GPTGenerationService:
 
             if item.type != "function_call":
                 continue
+
+            tool_started_at = perf_counter()
 
             if item.name != "get_workout_by_name":
                 logger.warning(
@@ -95,6 +114,10 @@ class GPTGenerationService:
                         "output": json.dumps(tool_output),
                     }
                 )
+                if timing is not None:
+                    timing.record_tool_call(
+                        (perf_counter() - tool_started_at) * 1000
+                    )
                 continue
 
             logger.info(
@@ -120,6 +143,10 @@ class GPTGenerationService:
                         "output": json.dumps(tool_output),
                     }
                 )
+                if timing is not None:
+                    timing.record_tool_call(
+                        (perf_counter() - tool_started_at) * 1000
+                    )
                 continue
 
             workout = self._workout_tool.get_workout_by_name(
@@ -155,13 +182,22 @@ class GPTGenerationService:
                     "output": json.dumps(tool_output),
                 }
             )
+            if timing is not None:
+                timing.record_tool_call(
+                    (perf_counter() - tool_started_at) * 1000
+                )
 
         if tool_outputs:
+            started_at = perf_counter()
             response = self._client.responses.create(
                 model="gpt-5",
                 previous_response_id=response.id,
                 input=tool_outputs,
             )
+            if timing is not None:
+                timing.record_openai_call(
+                    (perf_counter() - started_at) * 1000
+                )
 
         logger.info(
             "Returning final AI response."

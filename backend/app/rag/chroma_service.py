@@ -29,6 +29,10 @@ class ChromaService:
                 "description": "Workout plans used by FitAI."
             },
         )
+    def warm_up(self) -> None:
+        """Initialize the Chroma collection before serving requests."""
+
+        self.count()
         
     def query(
         self,
