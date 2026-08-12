@@ -1,4 +1,4 @@
-# FitAI 🏋️‍♂️
+# FitAI 
 
 FitAI is an AI-powered personal fitness coach that recommends workout plans based on a user's goals using **Retrieval Augmented Generation (RAG)** and **OpenAI Tool Calling**.
 
